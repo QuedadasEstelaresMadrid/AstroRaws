@@ -71,7 +71,7 @@ namespace AstroRaws
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.previewMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lightsBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.darksBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -375,6 +375,7 @@ namespace AstroRaws
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -401,7 +402,7 @@ namespace AstroRaws
             // 
             this.contextMenuStrip1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
+            this.previewMenuItem1,
             this.toolStripSeparator1,
             this.lightsBtn,
             this.darksBtn,
@@ -411,42 +412,43 @@ namespace AstroRaws
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(138, 142);
             // 
-            // toolStripMenuItem1
+            // previewMenuItem1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
-            this.toolStripMenuItem1.Text = "Preview";
+            this.previewMenuItem1.Name = "previewMenuItem1";
+            this.previewMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.previewMenuItem1.Text = "Preview";
+            this.previewMenuItem1.Click += new System.EventHandler(this.previewMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // lightsBtn
             // 
             this.lightsBtn.Name = "lightsBtn";
-            this.lightsBtn.Size = new System.Drawing.Size(137, 22);
+            this.lightsBtn.Size = new System.Drawing.Size(180, 22);
             this.lightsBtn.Text = "Add lights";
             this.lightsBtn.Click += new System.EventHandler(this.lightsBtn_Click);
             // 
             // darksBtn
             // 
             this.darksBtn.Name = "darksBtn";
-            this.darksBtn.Size = new System.Drawing.Size(137, 22);
+            this.darksBtn.Size = new System.Drawing.Size(180, 22);
             this.darksBtn.Text = "Add darks";
             this.darksBtn.Click += new System.EventHandler(this.darksBtn_Click);
             // 
             // biasBtn
             // 
             this.biasBtn.Name = "biasBtn";
-            this.biasBtn.Size = new System.Drawing.Size(137, 22);
+            this.biasBtn.Size = new System.Drawing.Size(180, 22);
             this.biasBtn.Text = "Add bias";
             this.biasBtn.Click += new System.EventHandler(this.biasBtn_Click);
             // 
             // flatsBtn
             // 
             this.flatsBtn.Name = "flatsBtn";
-            this.flatsBtn.Size = new System.Drawing.Size(137, 22);
+            this.flatsBtn.Size = new System.Drawing.Size(180, 22);
             this.flatsBtn.Text = "Add flats";
             this.flatsBtn.Click += new System.EventHandler(this.flatsBtn_Click);
             // 
@@ -456,7 +458,7 @@ namespace AstroRaws
             this.tiffBtn,
             this.finalBtn});
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addExtraToolStripMenuItem.Text = "Add extra";
             // 
             // tiffBtn
@@ -528,7 +530,7 @@ namespace AstroRaws
         private System.Windows.Forms.ToolStripMenuItem largeIconToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem viewlistToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem previewMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem lightsBtn;
         private System.Windows.Forms.ToolStripMenuItem darksBtn;

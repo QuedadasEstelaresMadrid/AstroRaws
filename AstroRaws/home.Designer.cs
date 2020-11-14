@@ -62,10 +62,12 @@ namespace AstroRaws
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.localBtn);
             this.splitContainer1.Panel1.Controls.Add(this.logoBox);
+            this.splitContainer1.Panel1MinSize = 200;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.listView1);
+            this.splitContainer1.Panel2MinSize = 400;
             this.splitContainer1.Size = new System.Drawing.Size(684, 408);
             this.splitContainer1.SplitterDistance = 228;
             this.splitContainer1.TabIndex = 0;

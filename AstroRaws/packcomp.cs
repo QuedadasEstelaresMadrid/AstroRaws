@@ -162,6 +162,33 @@ namespace AstroRaws
             }
         }
 
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ListView.SelectedListViewItemCollection files = this.listView1.SelectedItems;
+
+            if (files.Count == 1)
+            {
+                foreach (ListViewItem item in files)
+                {
+                    FileAttributes attr = File.GetAttributes(item.Tag.ToString());
+
+                    if (attr.HasFlag(FileAttributes.Directory))
+                    {
+                        PopulateTreeView(item.Tag.ToString());
+                    }
+
+                    else
+                    {
+                        //preview
+                        preview prev = new preview();
+                        prev.Tag = item.Tag.ToString();
+                        prev.Show();
+                    }
+
+                }
+            }
+        }
+
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             DialogResult result = folderBrowserDialog1.ShowDialog();
@@ -373,6 +400,38 @@ namespace AstroRaws
             extracounterStatusLabel10.Text = (this.tiffs_list.Count + this.final_list.Count).ToString();
         }
 
+        private void previewMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection files = this.listView1.SelectedItems;
+
+            if (files.Count == 1)
+            {
+                foreach (ListViewItem item in files)
+                {
+                    FileAttributes attr = File.GetAttributes(item.Tag.ToString());
+
+                    if (attr.HasFlag(FileAttributes.Directory))
+                    {
+                        MessageBox.Show("Please, select a file");
+                    }
+
+                    else
+                    {
+                        preview prev = new preview();
+                        prev.Tag = item.Tag.ToString();
+                        prev.Show();
+                    }
+
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Please, select only one file");
+            }
+
+        }
+
 
         //métodos auxiliares
         private static String BytesToString(long byteCount)
@@ -387,5 +446,7 @@ namespace AstroRaws
 
             return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
         }
+
+
     }
 }
