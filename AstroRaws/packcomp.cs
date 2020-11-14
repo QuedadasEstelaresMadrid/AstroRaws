@@ -170,6 +170,7 @@ namespace AstroRaws
             {
                 //comprobar si es dir o file. si es dir añadir archivos de dentro
                 //si el fichero ya existe no añadir
+                //
 
                 this.lights_list.Add(item.Tag.ToString());
                 this.lights_counter++;
