@@ -54,11 +54,13 @@ namespace AstroRaws
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lightscounterStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.darkscounterStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.biascounterStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.flatscounterStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.extracounterStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -66,21 +68,19 @@ namespace AstroRaws
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lightsBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.addDarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addBiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addFlatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.darksBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.biasBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.flatsBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.addExtraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pNGJPGfinalImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tiffBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.finalBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -105,32 +105,32 @@ namespace AstroRaws
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(144, 22);
             this.toolStripMenuItem3.Text = "Select foler";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // viewlistToolStripMenuItem
             // 
             this.viewlistToolStripMenuItem.Name = "viewlistToolStripMenuItem";
-            this.viewlistToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewlistToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.viewlistToolStripMenuItem.Text = "View list";
             this.viewlistToolStripMenuItem.Click += new System.EventHandler(this.viewlistToolStripMenuItem_Click);
             // 
             // makePackToolStripMenuItem1
             // 
             this.makePackToolStripMenuItem1.Name = "makePackToolStripMenuItem1";
-            this.makePackToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.makePackToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.makePackToolStripMenuItem1.Text = "Make pack";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(141, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // profilesToolStripMenuItem
@@ -145,13 +145,13 @@ namespace AstroRaws
             // userToolStripMenuItem
             // 
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.userToolStripMenuItem.Text = "User";
             // 
             // equipmentToolStripMenuItem
             // 
             this.equipmentToolStripMenuItem.Name = "equipmentToolStripMenuItem";
-            this.equipmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.equipmentToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.equipmentToolStripMenuItem.Text = "Equipment";
             // 
             // viewToolStripMenuItem
@@ -166,7 +166,7 @@ namespace AstroRaws
             // themeToolStripMenuItem
             // 
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.themeToolStripMenuItem.Text = "Theme";
             // 
             // explorerToolStripMenuItem
@@ -178,7 +178,7 @@ namespace AstroRaws
             this.smallIconToolStripMenuItem,
             this.largeIconToolStripMenuItem});
             this.explorerToolStripMenuItem.Name = "explorerToolStripMenuItem";
-            this.explorerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.explorerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.explorerToolStripMenuItem.Text = "Explorer";
             // 
             // detailsToolStripMenuItem
@@ -246,13 +246,13 @@ namespace AstroRaws
             this.toolStripStatusLabel1,
             this.lightscounterStatusLabel2,
             this.toolStripStatusLabel3,
-            this.toolStripStatusLabel4,
+            this.darkscounterStatusLabel4,
             this.toolStripStatusLabel5,
-            this.toolStripStatusLabel6,
+            this.biascounterStatusLabel6,
             this.toolStripStatusLabel7,
-            this.toolStripStatusLabel8,
+            this.flatscounterStatusLabel8,
             this.toolStripStatusLabel9,
-            this.toolStripStatusLabel10});
+            this.extracounterStatusLabel10});
             this.statusStrip1.Location = new System.Drawing.Point(0, 339);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
@@ -278,11 +278,11 @@ namespace AstroRaws
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(48, 17);
             this.toolStripStatusLabel3.Text = "Darks:";
             // 
-            // toolStripStatusLabel4
+            // darkscounterStatusLabel4
             // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(15, 17);
-            this.toolStripStatusLabel4.Text = "0";
+            this.darkscounterStatusLabel4.Name = "darkscounterStatusLabel4";
+            this.darkscounterStatusLabel4.Size = new System.Drawing.Size(15, 17);
+            this.darkscounterStatusLabel4.Text = "0";
             // 
             // toolStripStatusLabel5
             // 
@@ -290,11 +290,11 @@ namespace AstroRaws
             this.toolStripStatusLabel5.Size = new System.Drawing.Size(38, 17);
             this.toolStripStatusLabel5.Text = "Bias:";
             // 
-            // toolStripStatusLabel6
+            // biascounterStatusLabel6
             // 
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(15, 17);
-            this.toolStripStatusLabel6.Text = "0";
+            this.biascounterStatusLabel6.Name = "biascounterStatusLabel6";
+            this.biascounterStatusLabel6.Size = new System.Drawing.Size(15, 17);
+            this.biascounterStatusLabel6.Text = "0";
             // 
             // toolStripStatusLabel7
             // 
@@ -302,11 +302,23 @@ namespace AstroRaws
             this.toolStripStatusLabel7.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel7.Text = "Flats:";
             // 
-            // toolStripStatusLabel8
+            // flatscounterStatusLabel8
             // 
-            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(15, 17);
-            this.toolStripStatusLabel8.Text = "0";
+            this.flatscounterStatusLabel8.Name = "flatscounterStatusLabel8";
+            this.flatscounterStatusLabel8.Size = new System.Drawing.Size(15, 17);
+            this.flatscounterStatusLabel8.Text = "0";
+            // 
+            // toolStripStatusLabel9
+            // 
+            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
+            this.toolStripStatusLabel9.Size = new System.Drawing.Size(45, 17);
+            this.toolStripStatusLabel9.Text = "Extra:";
+            // 
+            // extracounterStatusLabel10
+            // 
+            this.extracounterStatusLabel10.Name = "extracounterStatusLabel10";
+            this.extracounterStatusLabel10.Size = new System.Drawing.Size(15, 17);
+            this.extracounterStatusLabel10.Text = "0";
             // 
             // splitContainer1
             // 
@@ -377,6 +389,14 @@ namespace AstroRaws
             this.columnHeader3.Text = "Last modified";
             this.columnHeader3.Width = 98;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Size";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Path";
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,9 +404,9 @@ namespace AstroRaws
             this.toolStripMenuItem1,
             this.toolStripSeparator1,
             this.lightsBtn,
-            this.addDarksToolStripMenuItem,
-            this.addBiasToolStripMenuItem,
-            this.addFlatsToolStripMenuItem,
+            this.darksBtn,
+            this.biasBtn,
+            this.flatsBtn,
             this.addExtraToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(138, 142);
@@ -409,64 +429,49 @@ namespace AstroRaws
             this.lightsBtn.Text = "Add lights";
             this.lightsBtn.Click += new System.EventHandler(this.lightsBtn_Click);
             // 
-            // addDarksToolStripMenuItem
+            // darksBtn
             // 
-            this.addDarksToolStripMenuItem.Name = "addDarksToolStripMenuItem";
-            this.addDarksToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.addDarksToolStripMenuItem.Text = "Add darks";
+            this.darksBtn.Name = "darksBtn";
+            this.darksBtn.Size = new System.Drawing.Size(137, 22);
+            this.darksBtn.Text = "Add darks";
+            this.darksBtn.Click += new System.EventHandler(this.darksBtn_Click);
             // 
-            // addBiasToolStripMenuItem
+            // biasBtn
             // 
-            this.addBiasToolStripMenuItem.Name = "addBiasToolStripMenuItem";
-            this.addBiasToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.addBiasToolStripMenuItem.Text = "Add bias";
+            this.biasBtn.Name = "biasBtn";
+            this.biasBtn.Size = new System.Drawing.Size(137, 22);
+            this.biasBtn.Text = "Add bias";
+            this.biasBtn.Click += new System.EventHandler(this.biasBtn_Click);
             // 
-            // addFlatsToolStripMenuItem
+            // flatsBtn
             // 
-            this.addFlatsToolStripMenuItem.Name = "addFlatsToolStripMenuItem";
-            this.addFlatsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.addFlatsToolStripMenuItem.Text = "Add flats";
+            this.flatsBtn.Name = "flatsBtn";
+            this.flatsBtn.Size = new System.Drawing.Size(137, 22);
+            this.flatsBtn.Text = "Add flats";
+            this.flatsBtn.Click += new System.EventHandler(this.flatsBtn_Click);
             // 
             // addExtraToolStripMenuItem
             // 
             this.addExtraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tiffToolStripMenuItem,
-            this.pNGJPGfinalImageToolStripMenuItem});
+            this.tiffBtn,
+            this.finalBtn});
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
             this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.addExtraToolStripMenuItem.Text = "Add extra";
             // 
-            // tiffToolStripMenuItem
+            // tiffBtn
             // 
-            this.tiffToolStripMenuItem.Name = "tiffToolStripMenuItem";
-            this.tiffToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.tiffToolStripMenuItem.Text = "Tiff (stacked image)";
+            this.tiffBtn.Name = "tiffBtn";
+            this.tiffBtn.Size = new System.Drawing.Size(212, 22);
+            this.tiffBtn.Text = "Tiff (stacked image)";
+            this.tiffBtn.Click += new System.EventHandler(this.tiffBtn_Click);
             // 
-            // pNGJPGfinalImageToolStripMenuItem
+            // finalBtn
             // 
-            this.pNGJPGfinalImageToolStripMenuItem.Name = "pNGJPGfinalImageToolStripMenuItem";
-            this.pNGJPGfinalImageToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.pNGJPGfinalImageToolStripMenuItem.Text = "PNG, JPG (final image)";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Size";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Path";
-            // 
-            // toolStripStatusLabel9
-            // 
-            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
-            this.toolStripStatusLabel9.Size = new System.Drawing.Size(45, 17);
-            this.toolStripStatusLabel9.Text = "Extra:";
-            // 
-            // toolStripStatusLabel10
-            // 
-            this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
-            this.toolStripStatusLabel10.Size = new System.Drawing.Size(15, 17);
-            this.toolStripStatusLabel10.Text = "0";
+            this.finalBtn.Name = "finalBtn";
+            this.finalBtn.Size = new System.Drawing.Size(212, 22);
+            this.finalBtn.Text = "PNG, JPG (final image)";
+            this.finalBtn.Click += new System.EventHandler(this.finalBtn_Click);
             // 
             // packcomp
             // 
@@ -526,9 +531,9 @@ namespace AstroRaws
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem lightsBtn;
-        private System.Windows.Forms.ToolStripMenuItem addDarksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addBiasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addFlatsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darksBtn;
+        private System.Windows.Forms.ToolStripMenuItem biasBtn;
+        private System.Windows.Forms.ToolStripMenuItem flatsBtn;
         private System.Windows.Forms.ToolStripMenuItem makePackToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -538,18 +543,18 @@ namespace AstroRaws
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ToolStripStatusLabel lightscounterStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel darkscounterStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
+        private System.Windows.Forms.ToolStripStatusLabel biascounterStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
+        private System.Windows.Forms.ToolStripStatusLabel flatscounterStatusLabel8;
         private System.Windows.Forms.ToolStripMenuItem addExtraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tiffToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pNGJPGfinalImageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tiffBtn;
+        private System.Windows.Forms.ToolStripMenuItem finalBtn;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel10;
+        private System.Windows.Forms.ToolStripStatusLabel extracounterStatusLabel10;
     }
 }
 

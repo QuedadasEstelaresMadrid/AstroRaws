@@ -15,12 +15,17 @@ namespace AstroRaws
     public partial class packcomp : Form
     {
         List<string> lights_list = new List<string>();
-        int lights_counter = 0;
+        List<string> darks_list  = new List<string>();
+        List<string> bias_list   = new List<string>();
+        List<string> flats_list  = new List<string>();
+        List<string> tiffs_list  = new List<string>();
+        List<string> final_list  = new List<string>();
+
 
         public packcomp()
         {
             InitializeComponent();
-            string path = @"C:\Users\deept\Pictures"; //TODO esto fuera
+            string path = @"C:\Users\deept\Pictures"; //TODO esto fuera, obtener usuario
             PopulateTreeView(path);
         }
 
@@ -113,6 +118,14 @@ namespace AstroRaws
 
         }
 
+        private void viewlistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (string ee in this.lights_list)
+            {
+                MessageBox.Show(ee.ToString());
+            }
+        }
+
         private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listView1.View = View.Details;
@@ -168,17 +181,200 @@ namespace AstroRaws
 
             foreach (ListViewItem item in lightfiles)
             {
-                //comprobar si es dir o file. si es dir añadir archivos de dentro
-                //si el fichero ya existe no añadir
-                //
+                FileAttributes attr = File.GetAttributes(item.Tag.ToString());
 
-                this.lights_list.Add(item.Tag.ToString());
-                this.lights_counter++;
+                if (attr.HasFlag(FileAttributes.Directory))
+                {
+                    string[] fileEntries = Directory.GetFiles(item.Tag.ToString());
+                    foreach (string fileName in fileEntries)
+                    {
+                        if (!this.lights_list.Contains(fileName))
+                        {
+                            this.lights_list.Add(fileName);
+                        }
+                    }
+                }
+                
+                else
+                {
+                    if (!this.lights_list.Contains(item.Tag.ToString()))
+                    {
+                        this.lights_list.Add(item.Tag.ToString());
+                    }
+                }
+
             }
 
-            lightscounterStatusLabel2.Text = this.lights_counter.ToString();
+            lightscounterStatusLabel2.Text = this.lights_list.Count.ToString();
         }
 
+        private void darksBtn_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection darkfiles = this.listView1.SelectedItems;
+
+            foreach (ListViewItem item in darkfiles)
+            {
+                FileAttributes attr = File.GetAttributes(item.Tag.ToString());
+
+                if (attr.HasFlag(FileAttributes.Directory))
+                {
+                    string[] fileEntries = Directory.GetFiles(item.Tag.ToString());
+                    foreach (string fileName in fileEntries)
+                    {
+                        if (!this.darks_list.Contains(fileName))
+                        {
+                            this.darks_list.Add(fileName);
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (!this.darks_list.Contains(item.Tag.ToString()))
+                    {
+                        this.darks_list.Add(item.Tag.ToString());
+                    }
+                }
+
+            }
+
+            darkscounterStatusLabel4.Text = this.darks_list.Count.ToString();
+        }
+
+        private void biasBtn_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection biasfiles = this.listView1.SelectedItems;
+
+            foreach (ListViewItem item in biasfiles)
+            {
+                FileAttributes attr = File.GetAttributes(item.Tag.ToString());
+
+                if (attr.HasFlag(FileAttributes.Directory))
+                {
+                    string[] fileEntries = Directory.GetFiles(item.Tag.ToString());
+                    foreach (string fileName in fileEntries)
+                    {
+                        if (!this.bias_list.Contains(fileName))
+                        {
+                            this.bias_list.Add(fileName);
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (!this.bias_list.Contains(item.Tag.ToString()))
+                    {
+                        this.bias_list.Add(item.Tag.ToString());
+                    }
+                }
+
+            }
+
+            biascounterStatusLabel6.Text = this.bias_list.Count.ToString();
+        }
+
+        private void flatsBtn_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection flatsfiles = this.listView1.SelectedItems;
+
+            foreach (ListViewItem item in flatsfiles)
+            {
+                FileAttributes attr = File.GetAttributes(item.Tag.ToString());
+
+                if (attr.HasFlag(FileAttributes.Directory))
+                {
+                    string[] fileEntries = Directory.GetFiles(item.Tag.ToString());
+                    foreach (string fileName in fileEntries)
+                    {
+                        if (!this.flats_list.Contains(fileName))
+                        {
+                            this.flats_list.Add(fileName);
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (!this.flats_list.Contains(item.Tag.ToString()))
+                    {
+                        this.flats_list.Add(item.Tag.ToString());
+                    }
+                }
+
+            }
+
+            flatscounterStatusLabel8.Text = this.flats_list.Count.ToString();
+        }
+
+        private void tiffBtn_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection tiffsfiles = this.listView1.SelectedItems;
+
+            foreach (ListViewItem item in tiffsfiles)
+            {
+                FileAttributes attr = File.GetAttributes(item.Tag.ToString());
+
+                if (attr.HasFlag(FileAttributes.Directory))
+                {
+                    string[] fileEntries = Directory.GetFiles(item.Tag.ToString());
+                    foreach (string fileName in fileEntries)
+                    {
+                        if (!this.tiffs_list.Contains(fileName))
+                        {
+                            this.tiffs_list.Add(fileName);
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (!this.tiffs_list.Contains(item.Tag.ToString()))
+                    {
+                        this.tiffs_list.Add(item.Tag.ToString());
+                    }
+                }
+
+            }
+
+            extracounterStatusLabel10.Text = (this.tiffs_list.Count + this.final_list.Count).ToString();
+        }
+
+        private void finalBtn_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection finalfiles = this.listView1.SelectedItems;
+
+            foreach (ListViewItem item in finalfiles)
+            {
+                FileAttributes attr = File.GetAttributes(item.Tag.ToString());
+
+                if (attr.HasFlag(FileAttributes.Directory))
+                {
+                    string[] fileEntries = Directory.GetFiles(item.Tag.ToString());
+                    foreach (string fileName in fileEntries)
+                    {
+                        if (!this.final_list.Contains(fileName))
+                        {
+                            this.final_list.Add(fileName);
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (!this.final_list.Contains(item.Tag.ToString()))
+                    {
+                        this.final_list.Add(item.Tag.ToString());
+                    }
+                }
+
+            }
+
+            extracounterStatusLabel10.Text = (this.tiffs_list.Count + this.final_list.Count).ToString();
+        }
+
+
+        //métodos aux
         private static String BytesToString(long byteCount)
         {
             string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
@@ -190,14 +386,6 @@ namespace AstroRaws
             double num = Math.Round(bytes / Math.Pow(1024, place), 1);
 
             return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
-        }
-
-        private void viewlistToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (string ee in this.lights_list)
-            {
-                MessageBox.Show(ee.ToString());
-            }
         }
     }
 }
