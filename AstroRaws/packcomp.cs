@@ -374,7 +374,7 @@ namespace AstroRaws
         }
 
 
-        //métodos aux
+        //métodos auxiliares
         private static String BytesToString(long byteCount)
         {
             string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
