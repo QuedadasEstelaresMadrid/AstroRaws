@@ -125,7 +125,7 @@ namespace AstroRaws
             this.makeBtn.Name = "makeBtn";
             this.makeBtn.Size = new System.Drawing.Size(228, 48);
             this.makeBtn.TabIndex = 3;
-            this.makeBtn.Text = "Make package";
+            this.makeBtn.Text = "Create package";
             this.makeBtn.UseVisualStyleBackColor = false;
             this.makeBtn.Click += new System.EventHandler(this.makeBtn_Click);
             // 
