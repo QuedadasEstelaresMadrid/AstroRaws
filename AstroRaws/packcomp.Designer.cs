@@ -105,32 +105,33 @@ namespace AstroRaws
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem3.Text = "Select foler";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // viewlistToolStripMenuItem
             // 
             this.viewlistToolStripMenuItem.Name = "viewlistToolStripMenuItem";
-            this.viewlistToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.viewlistToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewlistToolStripMenuItem.Text = "View list";
             this.viewlistToolStripMenuItem.Click += new System.EventHandler(this.viewlistToolStripMenuItem_Click);
             // 
             // makePackToolStripMenuItem1
             // 
             this.makePackToolStripMenuItem1.Name = "makePackToolStripMenuItem1";
-            this.makePackToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.makePackToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.makePackToolStripMenuItem1.Text = "Make pack";
+            this.makePackToolStripMenuItem1.Click += new System.EventHandler(this.makePackToolStripMenuItem1_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(141, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // profilesToolStripMenuItem
@@ -415,40 +416,40 @@ namespace AstroRaws
             // previewMenuItem1
             // 
             this.previewMenuItem1.Name = "previewMenuItem1";
-            this.previewMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.previewMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.previewMenuItem1.Text = "Preview";
             this.previewMenuItem1.Click += new System.EventHandler(this.previewMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
             // 
             // lightsBtn
             // 
             this.lightsBtn.Name = "lightsBtn";
-            this.lightsBtn.Size = new System.Drawing.Size(180, 22);
+            this.lightsBtn.Size = new System.Drawing.Size(137, 22);
             this.lightsBtn.Text = "Add lights";
             this.lightsBtn.Click += new System.EventHandler(this.lightsBtn_Click);
             // 
             // darksBtn
             // 
             this.darksBtn.Name = "darksBtn";
-            this.darksBtn.Size = new System.Drawing.Size(180, 22);
+            this.darksBtn.Size = new System.Drawing.Size(137, 22);
             this.darksBtn.Text = "Add darks";
             this.darksBtn.Click += new System.EventHandler(this.darksBtn_Click);
             // 
             // biasBtn
             // 
             this.biasBtn.Name = "biasBtn";
-            this.biasBtn.Size = new System.Drawing.Size(180, 22);
+            this.biasBtn.Size = new System.Drawing.Size(137, 22);
             this.biasBtn.Text = "Add bias";
             this.biasBtn.Click += new System.EventHandler(this.biasBtn_Click);
             // 
             // flatsBtn
             // 
             this.flatsBtn.Name = "flatsBtn";
-            this.flatsBtn.Size = new System.Drawing.Size(180, 22);
+            this.flatsBtn.Size = new System.Drawing.Size(137, 22);
             this.flatsBtn.Text = "Add flats";
             this.flatsBtn.Click += new System.EventHandler(this.flatsBtn_Click);
             // 
@@ -458,7 +459,7 @@ namespace AstroRaws
             this.tiffBtn,
             this.finalBtn});
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.addExtraToolStripMenuItem.Text = "Add extra";
             // 
             // tiffBtn

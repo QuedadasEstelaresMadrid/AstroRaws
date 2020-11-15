@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using System.IO;
 
+
 namespace AstroRaws
 {
     public partial class packcomp : Form
@@ -21,9 +22,12 @@ namespace AstroRaws
         List<string> tiffs_list  = new List<string>();
         List<string> final_list  = new List<string>();
 
+        
+
 
         public packcomp()
         {
+
             InitializeComponent();
             string path = @"C:\Users\deept\Pictures"; //TODO esto fuera, obtener usuario
             PopulateTreeView(path);
@@ -92,8 +96,6 @@ namespace AstroRaws
                 listView1.Items.Add(item);
             }
 
-   
-
             foreach (FileInfo file in nodeDirInfo.GetFiles())
             {
                 item = new ListViewItem(file.Name, 1);
@@ -117,6 +119,61 @@ namespace AstroRaws
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
         }
+
+        private void emulate_NodeMouseClick(string path, bool populate = true)
+        {
+            listView1.Items.Clear();
+
+            ListViewItem.ListViewSubItem[] subItems;
+            ListViewItem item = null;
+
+            DirectoryInfo nodeDirInfo = new DirectoryInfo(path);
+
+            foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
+            {
+                item = new ListViewItem(dir.Name, 0);
+                subItems = new ListViewItem.ListViewSubItem[]
+                {
+                    new ListViewItem.ListViewSubItem(item, "Directory"),
+                    new ListViewItem.ListViewSubItem(item, dir.LastAccessTime.ToShortDateString())
+                };
+
+                item.SubItems.AddRange(subItems);
+
+                item.Tag = dir.FullName.ToString();
+
+                listView1.Items.Add(item);
+            }
+
+            foreach (FileInfo file in nodeDirInfo.GetFiles())
+            {
+                item = new ListViewItem(file.Name, 1);
+
+                subItems = new ListViewItem.ListViewSubItem[]
+                {
+                    new ListViewItem.ListViewSubItem(item, "File"),
+                    new ListViewItem.ListViewSubItem(item, file.LastAccessTime.ToShortDateString()),
+                    new ListViewItem.ListViewSubItem(item, BytesToString(file.Length).ToString()),
+                    new ListViewItem.ListViewSubItem(item, file.FullName.ToString())
+
+                };
+
+                item.SubItems.AddRange(subItems);
+
+                item.Tag = file.FullName.ToString();
+
+                listView1.Items.Add(item);
+            }
+
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+            if (populate)
+            {
+                this.PopulateTreeView(path);
+            }
+            
+        }
+
 
         private void viewlistToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -174,12 +231,11 @@ namespace AstroRaws
 
                     if (attr.HasFlag(FileAttributes.Directory))
                     {
-                        PopulateTreeView(item.Tag.ToString());
+                        this.emulate_NodeMouseClick(item.Tag.ToString());
                     }
 
                     else
                     {
-                        //preview
                         preview prev = new preview();
                         prev.Tag = item.Tag.ToString();
                         prev.Show();
@@ -199,6 +255,7 @@ namespace AstroRaws
 
                 treeView1.Nodes.Clear();
                 PopulateTreeView(folderBrowserDialog1.SelectedPath);
+                emulate_NodeMouseClick(folderBrowserDialog1.SelectedPath, false);
             }
         }
 
@@ -447,6 +504,13 @@ namespace AstroRaws
             return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
         }
 
+        private void makePackToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //TODO debe mostrar un wizard para configurar las opciones del paquete
 
+            string path = Directory.GetCurrentDirectory();
+
+            DirectoryInfo tmppack = Directory.CreateDirectory(path+@"\tmp1");
+        }
     }
 }
