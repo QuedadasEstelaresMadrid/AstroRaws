@@ -81,6 +81,7 @@ namespace AstroRaws
             this.tiffBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.finalBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.videoBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -411,45 +412,45 @@ namespace AstroRaws
             this.flatsBtn,
             this.addExtraToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(138, 142);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 164);
             // 
             // previewMenuItem1
             // 
             this.previewMenuItem1.Name = "previewMenuItem1";
-            this.previewMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.previewMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.previewMenuItem1.Text = "Preview";
             this.previewMenuItem1.Click += new System.EventHandler(this.previewMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // lightsBtn
             // 
             this.lightsBtn.Name = "lightsBtn";
-            this.lightsBtn.Size = new System.Drawing.Size(137, 22);
+            this.lightsBtn.Size = new System.Drawing.Size(180, 22);
             this.lightsBtn.Text = "Add lights";
             this.lightsBtn.Click += new System.EventHandler(this.lightsBtn_Click);
             // 
             // darksBtn
             // 
             this.darksBtn.Name = "darksBtn";
-            this.darksBtn.Size = new System.Drawing.Size(137, 22);
+            this.darksBtn.Size = new System.Drawing.Size(180, 22);
             this.darksBtn.Text = "Add darks";
             this.darksBtn.Click += new System.EventHandler(this.darksBtn_Click);
             // 
             // biasBtn
             // 
             this.biasBtn.Name = "biasBtn";
-            this.biasBtn.Size = new System.Drawing.Size(137, 22);
+            this.biasBtn.Size = new System.Drawing.Size(180, 22);
             this.biasBtn.Text = "Add bias";
             this.biasBtn.Click += new System.EventHandler(this.biasBtn_Click);
             // 
             // flatsBtn
             // 
             this.flatsBtn.Name = "flatsBtn";
-            this.flatsBtn.Size = new System.Drawing.Size(137, 22);
+            this.flatsBtn.Size = new System.Drawing.Size(180, 22);
             this.flatsBtn.Text = "Add flats";
             this.flatsBtn.Click += new System.EventHandler(this.flatsBtn_Click);
             // 
@@ -457,9 +458,10 @@ namespace AstroRaws
             // 
             this.addExtraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tiffBtn,
-            this.finalBtn});
+            this.finalBtn,
+            this.videoBtn});
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addExtraToolStripMenuItem.Text = "Add extra";
             // 
             // tiffBtn
@@ -475,6 +477,13 @@ namespace AstroRaws
             this.finalBtn.Size = new System.Drawing.Size(212, 22);
             this.finalBtn.Text = "PNG, JPG (final image)";
             this.finalBtn.Click += new System.EventHandler(this.finalBtn_Click);
+            // 
+            // videoBtn
+            // 
+            this.videoBtn.Name = "videoBtn";
+            this.videoBtn.Size = new System.Drawing.Size(212, 22);
+            this.videoBtn.Text = "Video";
+            this.videoBtn.Click += new System.EventHandler(this.videoBtn_Click);
             // 
             // packcomp
             // 
@@ -558,6 +567,7 @@ namespace AstroRaws
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
         private System.Windows.Forms.ToolStripStatusLabel extracounterStatusLabel10;
+        private System.Windows.Forms.ToolStripMenuItem videoBtn;
     }
 }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO;
-
+using System.Diagnostics;
 
 namespace AstroRaws
 {
@@ -21,9 +21,7 @@ namespace AstroRaws
         List<string> flats_list  = new List<string>();
         List<string> tiffs_list  = new List<string>();
         List<string> final_list  = new List<string>();
-
-        
-
+        List<string> video_list  = new List<string>();
 
         public packcomp()
         {
@@ -421,7 +419,7 @@ namespace AstroRaws
 
             }
 
-            extracounterStatusLabel10.Text = (this.tiffs_list.Count + this.final_list.Count).ToString();
+            extracounterStatusLabel10.Text = (this.tiffs_list.Count + this.final_list.Count + this.video_list.Count).ToString();
         }
 
         private void finalBtn_Click(object sender, EventArgs e)
@@ -454,7 +452,40 @@ namespace AstroRaws
 
             }
 
-            extracounterStatusLabel10.Text = (this.tiffs_list.Count + this.final_list.Count).ToString();
+            extracounterStatusLabel10.Text = (this.tiffs_list.Count + this.final_list.Count + this.video_list.Count).ToString();
+        }
+
+        private void videoBtn_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection videofiles = this.listView1.SelectedItems;
+
+            foreach (ListViewItem item in videofiles)
+            {
+                FileAttributes attr = File.GetAttributes(item.Tag.ToString());
+
+                if (attr.HasFlag(FileAttributes.Directory))
+                {
+                    string[] fileEntries = Directory.GetFiles(item.Tag.ToString());
+                    foreach (string fileName in fileEntries)
+                    {
+                        if (!this.video_list.Contains(fileName))
+                        {
+                            this.video_list.Add(fileName);
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (!this.video_list.Contains(item.Tag.ToString()))
+                    {
+                        this.video_list.Add(item.Tag.ToString());
+                    }
+                }
+
+            }
+
+            extracounterStatusLabel10.Text = (this.tiffs_list.Count + this.final_list.Count + this.video_list.Count).ToString();
         }
 
         private void previewMenuItem1_Click(object sender, EventArgs e)
@@ -508,9 +539,71 @@ namespace AstroRaws
         {
             //TODO debe mostrar un wizard para configurar las opciones del paquete
 
-            string path = Directory.GetCurrentDirectory();
+            string path  = Directory.GetCurrentDirectory();
+            DateTime dtn = DateTime.Now;
 
-            DirectoryInfo tmppack = Directory.CreateDirectory(path+@"\tmp1");
+            string finaldtn  = dtn.ToString().Replace("/", "").Replace(" ", "").Replace(":", "");
+            string finalpath = path + @"\tmp\" + finaldtn;
+            string zippath   = path + @"\7z\";
+
+            DirectoryInfo tmppack           = Directory.CreateDirectory(finalpath);
+            DirectoryInfo tmppack_lights    = Directory.CreateDirectory(finalpath+@"\lights");
+            DirectoryInfo tmppack_darks     = Directory.CreateDirectory(finalpath + @"\darks");
+            DirectoryInfo tmppack_bias      = Directory.CreateDirectory(finalpath + @"\bias");
+            DirectoryInfo tmppack_flats     = Directory.CreateDirectory(finalpath + @"\flats");
+            DirectoryInfo tmppack_extra     = Directory.CreateDirectory(finalpath + @"\extra");
+            DirectoryInfo tmppack_extratiff = Directory.CreateDirectory(finalpath + @"\extra\tiff");
+            DirectoryInfo tmppack_extrafin = Directory.CreateDirectory(finalpath + @"\extra\final");
+            DirectoryInfo tmppack_extravid  = Directory.CreateDirectory(finalpath + @"\extra\video");
+
+            copy_files(lights_list, finalpath + @"\lights\");
+            copy_files(darks_list, finalpath + @"\darks\");
+            copy_files(bias_list, finalpath + @"\bias\");
+            copy_files(flats_list, finalpath + @"\flats\");
+            copy_files(tiffs_list, finalpath + @"\extra\tiff\");
+            copy_files(final_list, finalpath + @"\extra\final\");
+            copy_files(video_list, finalpath + @"\extra\video\");
+
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.CreateNoWindow = false;
+            startInfo.UseShellExecute = false;
+            startInfo.FileName = zippath + @"\7za.exe";
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            startInfo.Arguments = " a "+finaldtn+".7z "+ finalpath + @"\*";
+
+            try
+            {
+                using (Process exeProcess = Process.Start(startInfo))
+                {
+                    exeProcess.WaitForExit();
+                }
+            }
+
+            catch 
+            {
+
+            }
+
+            //eliminar carpeta
         }
+
+        private void copy_files(List<string> list, string dest_dir)
+        {
+            foreach (string file in list)
+            {
+                try
+                {
+                    FileInfo fi = new FileInfo(file);
+                    File.Copy(file, dest_dir+fi.Name, true);
+                }
+
+                catch (IOException iox)
+                {
+                    MessageBox.Show(iox.Message);
+                }
+            }
+        }
+
+
     }
 }
