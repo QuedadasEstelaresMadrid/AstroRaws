@@ -565,11 +565,11 @@ namespace AstroRaws
             copy_files(video_list, finalpath + @"\extra\video\");
 
             ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.CreateNoWindow = false;
+            startInfo.CreateNoWindow = true;
             startInfo.UseShellExecute = false;
             startInfo.FileName = zippath + @"\7za.exe";
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.Arguments = " a "+finaldtn+".7z "+ finalpath + @"\*";
+            startInfo.Arguments = " a "+finaldtn+".arpack "+ finalpath + @"\*";
 
             try
             {

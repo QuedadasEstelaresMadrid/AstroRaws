@@ -25,6 +25,44 @@ namespace AstroRaws
         private void home_Load(object sender, EventArgs e)
         {
             check_install();
+            splitContainer1.Size = new Size(200, 200);
+            get_files();
+        }
+
+        private void get_files()
+        {
+            listView2.Items.Clear();
+
+            ListViewItem.ListViewSubItem[] subItems;
+            ListViewItem item = null;
+
+            DirectoryInfo nodeDirInfo = new DirectoryInfo(@"C:\Users\deept\source\repos\AstroRaws\AstroRaws\bin\Debug");
+
+            foreach (FileInfo file in nodeDirInfo.GetFiles())
+            {
+                if (file.Extension == ".arpack")
+                {
+                    item = new ListViewItem(file.Name, 1);
+
+                    subItems = new ListViewItem.ListViewSubItem[]
+                    {
+                    new ListViewItem.ListViewSubItem(item, "File"),
+                    new ListViewItem.ListViewSubItem(item, file.LastAccessTime.ToShortDateString()),
+                    new ListViewItem.ListViewSubItem(item, file.FullName.ToString())
+
+                    };
+
+                    item.SubItems.AddRange(subItems);
+
+                    item.Tag = file.FullName.ToString();
+                    item.ImageIndex = 0;
+
+                    listView2.Items.Add(item);
+                }
+            }
+
+            listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
         }
 
         private void check_install()
@@ -75,6 +113,23 @@ namespace AstroRaws
         {
             packcomp pc = new packcomp();
             pc.Show();
+        }
+
+
+        private void listView2_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (listView2.FocusedItem.Bounds.Contains(e.Location))
+                {
+                    contextMenuStrip1.Show(Cursor.Position);
+                }
+            }
+        }
+
+        private void getfilesMenuItem2_Click(object sender, EventArgs e)
+        {
+            get_files();
         }
     }
 }
