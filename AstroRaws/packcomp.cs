@@ -25,7 +25,6 @@ namespace AstroRaws
 
         public packcomp()
         {
-
             InitializeComponent();
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).ToString(); //TODO esto fuera, obtener usuario
             PopulateTreeView(path);
@@ -178,9 +177,7 @@ namespace AstroRaws
             {
                 this.PopulateTreeView(path);
             }
-            
         }
-
 
         private void viewlistToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -247,7 +244,6 @@ namespace AstroRaws
                         prev.Tag = item.Tag.ToString();
                         prev.Show();
                     }
-
                 }
             }
         }
@@ -326,7 +322,6 @@ namespace AstroRaws
                         this.darks_list.Add(item.Tag.ToString());
                     }
                 }
-
             }
 
             darkscounterStatusLabel4.Text = this.darks_list.Count.ToString();
@@ -392,7 +387,6 @@ namespace AstroRaws
                         this.flats_list.Add(item.Tag.ToString());
                     }
                 }
-
             }
 
             flatscounterStatusLabel8.Text = this.flats_list.Count.ToString();
@@ -491,7 +485,6 @@ namespace AstroRaws
                         this.video_list.Add(item.Tag.ToString());
                     }
                 }
-
             }
 
             extracounterStatusLabel10.Text = (this.tiffs_list.Count + this.final_list.Count + this.video_list.Count).ToString();
@@ -529,21 +522,6 @@ namespace AstroRaws
 
         }
 
-
-        //métodos auxiliares
-        private static String BytesToString(long byteCount)
-        {
-            string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
-
-            if (byteCount == 0) return "0" + suf[0];
-
-            long bytes = Math.Abs(byteCount);
-            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
-            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
-
-            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
-        }
-
         private void makePackToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             //TODO debe mostrar un wizard para configurar las opciones del paquete
@@ -556,22 +534,22 @@ namespace AstroRaws
             string zippath   = path + @"\7z\";
 
             DirectoryInfo tmppack           = Directory.CreateDirectory(finalpath);
-            DirectoryInfo tmppack_lights    = Directory.CreateDirectory(finalpath+@"\lights");
+            DirectoryInfo tmppack_lights    = Directory.CreateDirectory(finalpath + @"\lights");
             DirectoryInfo tmppack_darks     = Directory.CreateDirectory(finalpath + @"\darks");
             DirectoryInfo tmppack_bias      = Directory.CreateDirectory(finalpath + @"\bias");
             DirectoryInfo tmppack_flats     = Directory.CreateDirectory(finalpath + @"\flats");
             DirectoryInfo tmppack_extra     = Directory.CreateDirectory(finalpath + @"\extra");
             DirectoryInfo tmppack_extratiff = Directory.CreateDirectory(finalpath + @"\extra\tiff");
-            DirectoryInfo tmppack_extrafin = Directory.CreateDirectory(finalpath + @"\extra\final");
+            DirectoryInfo tmppack_extrafin  = Directory.CreateDirectory(finalpath + @"\extra\final");
             DirectoryInfo tmppack_extravid  = Directory.CreateDirectory(finalpath + @"\extra\video");
 
             copy_files(lights_list, finalpath + @"\lights\");
-            copy_files(darks_list, finalpath + @"\darks\");
-            copy_files(bias_list, finalpath + @"\bias\");
-            copy_files(flats_list, finalpath + @"\flats\");
-            copy_files(tiffs_list, finalpath + @"\extra\tiff\");
-            copy_files(final_list, finalpath + @"\extra\final\");
-            copy_files(video_list, finalpath + @"\extra\video\");
+            copy_files(darks_list, finalpath  + @"\darks\");
+            copy_files(bias_list, finalpath   + @"\bias\");
+            copy_files(flats_list, finalpath  + @"\flats\");
+            copy_files(tiffs_list, finalpath  + @"\extra\tiff\");
+            copy_files(final_list, finalpath  + @"\extra\final\");
+            copy_files(video_list, finalpath  + @"\extra\video\");
 
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.CreateNoWindow = true;
@@ -617,6 +595,20 @@ namespace AstroRaws
                     MessageBox.Show(iox.Message);
                 }
             }
+        }
+
+        //métodos auxiliares
+        private static String BytesToString(long byteCount)
+        {
+            string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
+
+            if (byteCount == 0) return "0" + suf[0];
+
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+
+            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
         }
 
 
