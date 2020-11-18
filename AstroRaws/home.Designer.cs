@@ -40,22 +40,32 @@ namespace AstroRaws
             this.localBtn = new System.Windows.Forms.Button();
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.listView1 = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.getfilesMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.getfilesMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aRDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.copyStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.googleDriveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dropboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -210,6 +220,12 @@ namespace AstroRaws
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView2_MouseClick);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "file.png");
+            // 
             // listView1
             // 
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -237,76 +253,6 @@ namespace AstroRaws
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // optionToolStripMenuItem
-            // 
-            this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.catalogToolStripMenuItem});
-            this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
-            this.optionToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.optionToolStripMenuItem.Text = "Find";
-            // 
-            // catalogToolStripMenuItem
-            // 
-            this.catalogToolStripMenuItem.Name = "catalogToolStripMenuItem";
-            this.catalogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.catalogToolStripMenuItem.Text = "Catalog";
-            // 
-            // orderToolStripMenuItem
-            // 
-            this.orderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nameToolStripMenuItem,
-            this.dateToolStripMenuItem});
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.orderToolStripMenuItem.Text = "Order";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "file.png");
-            // 
-            // nameToolStripMenuItem
-            // 
-            this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
-            this.nameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nameToolStripMenuItem.Text = "Name";
-            // 
-            // dateToolStripMenuItem
-            // 
-            this.dateToolStripMenuItem.Name = "dateToolStripMenuItem";
-            this.dateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dateToolStripMenuItem.Text = "Date";
-            // 
-            // sizeToolStripMenuItem
-            // 
-            this.sizeToolStripMenuItem.Name = "sizeToolStripMenuItem";
-            this.sizeToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.sizeToolStripMenuItem.Text = "Size";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "All";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.extractToolStripMenuItem,
-            this.shareToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(111, 92);
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
             // getfilesMenuItem2
             // 
             this.getfilesMenuItem2.BackColor = System.Drawing.Color.Transparent;
@@ -321,14 +267,87 @@ namespace AstroRaws
             this.getfilesMenuItem2.Size = new System.Drawing.Size(28, 20);
             this.getfilesMenuItem2.Click += new System.EventHandler(this.getfilesMenuItem2_Click);
             // 
+            // optionToolStripMenuItem
+            // 
+            this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.catalogToolStripMenuItem});
+            this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
+            this.optionToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.optionToolStripMenuItem.Text = "Find";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.toolStripMenuItem1.Text = "All";
+            // 
+            // catalogToolStripMenuItem
+            // 
+            this.catalogToolStripMenuItem.Name = "catalogToolStripMenuItem";
+            this.catalogToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.catalogToolStripMenuItem.Text = "Catalog";
+            // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nameToolStripMenuItem,
+            this.dateToolStripMenuItem});
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.orderToolStripMenuItem.Text = "Order";
+            // 
+            // nameToolStripMenuItem
+            // 
+            this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
+            this.nameToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.nameToolStripMenuItem.Text = "Name";
+            // 
+            // dateToolStripMenuItem
+            // 
+            this.dateToolStripMenuItem.Name = "dateToolStripMenuItem";
+            this.dateToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.dateToolStripMenuItem.Text = "Date";
+            // 
+            // sizeToolStripMenuItem
+            // 
+            this.sizeToolStripMenuItem.Name = "sizeToolStripMenuItem";
+            this.sizeToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.sizeToolStripMenuItem.Text = "Size";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.infoToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.extractToolStripMenuItem,
+            this.copyStripMenuItem2,
+            this.shareToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(111, 126);
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.infoToolStripMenuItem.Text = "Info";
+            // 
             // extractToolStripMenuItem
             // 
+            this.extractToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aRDirectoryToolStripMenuItem,
+            this.chooseToolStripMenuItem});
             this.extractToolStripMenuItem.Name = "extractToolStripMenuItem";
             this.extractToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.extractToolStripMenuItem.Text = "Extract";
             // 
             // shareToolStripMenuItem
             // 
+            this.shareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupToolStripMenuItem,
+            this.serverToolStripMenuItem});
             this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
             this.shareToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.shareToolStripMenuItem.Text = "Share";
@@ -338,6 +357,68 @@ namespace AstroRaws
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // aRDirectoryToolStripMenuItem
+            // 
+            this.aRDirectoryToolStripMenuItem.Name = "aRDirectoryToolStripMenuItem";
+            this.aRDirectoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aRDirectoryToolStripMenuItem.Text = "AR directory";
+            // 
+            // chooseToolStripMenuItem
+            // 
+            this.chooseToolStripMenuItem.Name = "chooseToolStripMenuItem";
+            this.chooseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chooseToolStripMenuItem.Text = "Choose...";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(107, 6);
+            // 
+            // groupToolStripMenuItem
+            // 
+            this.groupToolStripMenuItem.Name = "groupToolStripMenuItem";
+            this.groupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.groupToolStripMenuItem.Text = "Group";
+            // 
+            // serverToolStripMenuItem
+            // 
+            this.serverToolStripMenuItem.Name = "serverToolStripMenuItem";
+            this.serverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serverToolStripMenuItem.Text = "Server";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(107, 6);
+            // 
+            // copyStripMenuItem2
+            // 
+            this.copyStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.googleDriveToolStripMenuItem,
+            this.dropboxToolStripMenuItem,
+            this.localToolStripMenuItem});
+            this.copyStripMenuItem2.Name = "copyStripMenuItem2";
+            this.copyStripMenuItem2.Size = new System.Drawing.Size(110, 22);
+            this.copyStripMenuItem2.Text = "Copy";
+            // 
+            // googleDriveToolStripMenuItem
+            // 
+            this.googleDriveToolStripMenuItem.Name = "googleDriveToolStripMenuItem";
+            this.googleDriveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.googleDriveToolStripMenuItem.Text = "Google Drive";
+            // 
+            // dropboxToolStripMenuItem
+            // 
+            this.dropboxToolStripMenuItem.Name = "dropboxToolStripMenuItem";
+            this.dropboxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dropboxToolStripMenuItem.Text = "Dropbox";
+            // 
+            // localToolStripMenuItem
+            // 
+            this.localToolStripMenuItem.Name = "localToolStripMenuItem";
+            this.localToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.localToolStripMenuItem.Text = "Local";
             // 
             // home
             // 
@@ -388,10 +469,20 @@ namespace AstroRaws
         private System.Windows.Forms.ToolStripMenuItem dateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sizeToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getfilesMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem extractToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aRDirectoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chooseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serverToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem copyStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem googleDriveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dropboxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem localToolStripMenuItem;
     }
 }

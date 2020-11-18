@@ -36,7 +36,7 @@ namespace AstroRaws
             ListViewItem.ListViewSubItem[] subItems;
             ListViewItem item = null;
 
-            DirectoryInfo nodeDirInfo = new DirectoryInfo(@"C:\Users\deept\source\repos\AstroRaws\AstroRaws\bin\Debug");
+            DirectoryInfo nodeDirInfo = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\AstroRaws\archive");
 
             foreach (FileInfo file in nodeDirInfo.GetFiles())
             {
@@ -67,7 +67,8 @@ namespace AstroRaws
 
         private void check_install()
         {
-            string path = Directory.GetCurrentDirectory();
+            string path    = Directory.GetCurrentDirectory();
+            string mfolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
             //temp dir
             if (!Directory.Exists(path + @"\tmp"))
@@ -87,7 +88,20 @@ namespace AstroRaws
                 SQLiteConnection.CreateFile(path + @"\db\ardb.sqlite");
                 install_db();
             }
-            
+
+            //user media folder
+            if (!Directory.Exists(mfolder + @"\AstroRaws"))
+            {
+                DirectoryInfo mediafolder = Directory.CreateDirectory(mfolder + @"\AstroRaws");
+            }
+
+            //user media folder
+            if (!Directory.Exists(mfolder + @"\AstroRaws\archive"))
+            {
+                DirectoryInfo mediafolder = Directory.CreateDirectory(mfolder + @"\AstroRaws\archive");
+            }
+
+
 
             //descargar dependencias 7z
         }

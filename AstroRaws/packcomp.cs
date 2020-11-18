@@ -27,7 +27,7 @@ namespace AstroRaws
         {
 
             InitializeComponent();
-            string path = @"C:\Users\deept\Pictures"; //TODO esto fuera, obtener usuario
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).ToString(); //TODO esto fuera, obtener usuario
             PopulateTreeView(path);
         }
 
@@ -60,13 +60,22 @@ namespace AstroRaws
                 aNode = new TreeNode(subDir.Name, 0, 0);
                 aNode.Tag = subDir;
                 aNode.ImageKey = "folder";
-                subSubDirs = subDir.GetDirectories();
-                if (subSubDirs.Length != 0)
+                
+                try
                 {
-                    GetDirectories(subSubDirs, aNode);
+                    subSubDirs = subDir.GetDirectories();
+                    if (subSubDirs.Length != 0)
+                    {
+                        GetDirectories(subSubDirs, aNode);
+                    }
+
+                    nodeToAddTo.Nodes.Add(aNode);
                 }
 
-                nodeToAddTo.Nodes.Add(aNode);
+                catch
+                {
+
+                }
             }
         }
 
@@ -584,7 +593,13 @@ namespace AstroRaws
 
             }
 
-            //eliminar carpeta
+            //eliminar carpetatmp
+
+            File.Move(path + @"\" + finaldtn + ".arpack", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\AstroRaws\archive\" + finaldtn + ".arpack");
+
+            Directory.Delete(finalpath, true);
+
+            MessageBox.Show("Done!");
         }
 
         private void copy_files(List<string> list, string dest_dir)
